@@ -9,6 +9,7 @@
   import Contact from "../pages/Contact.svelte";
   import About from "../pages/About.svelte";
   import Profile from "../pages/Profile.svelte";
+  import Contacts from "../pages/Contacts.svelte";
 
   // Variables
   let page;
@@ -22,6 +23,7 @@
   router("/about", () => (page = About));
   // pass parameters encoded in route
   router("/profile/:id", ctx => loggedInGuard(Profile, ctx.params));
+  router("/contacts", () => loggedInGuard(Contacts, null));
   router("/*", () => (page = Login));
 
   // Set up the router to start and actively watch for changes

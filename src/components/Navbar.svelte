@@ -42,6 +42,11 @@
             <a href="/profile/{$currentUser.id}">Profile</a>
           </li>
         {/if}
+        {#if $currentUser}
+          <li>
+            <a href="/contacts">Contacts</a>
+          </li>
+        {/if}
         {#if !$currentUser}
           <li>
             <a href="/login">Login</a>
